@@ -1,20 +1,22 @@
 package com.asiainfo.mapper;
 
 import com.asiainfo.entity.Board;
+import com.asiainfo.entity.LoginLog;
+import com.asiainfo.entity.Post;
 
 /**
- * 板块Mapper
+ * 帖子Mapper
  *
  * @author zhangzhiwang
  * @Aug 6, 2019 7:30:53 PM
  */
-public interface BoardMapper {
+public interface PostMapper {
 	/**
-	 * 保存论坛版块
+	 * 保存
 	 * 
 	 * @author zhangzhiwang
-	 * @param board
+	 * @param post
 	 * @Aug 6, 2019 7:47:36 PM
 	 */
-	void save(Board board);
+	void save(Post post);
 }

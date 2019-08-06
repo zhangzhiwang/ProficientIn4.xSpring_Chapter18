@@ -19,7 +19,7 @@
 	<!-- 1、配置占位符读取其他配置文件的属性 -->
 	<context:property-placeholder location="classpath:db.properties" />
 	<!-- 2、配置父容器的组建扫描 -->
-	<context:component-scan base-package="com.asiainfo.service,com.asiainfo.dao"></context:component-scan>
+	<context:component-scan base-package="com.asiainfo.service,com.asiainfo.mapper"></context:component-scan>
 
 	<!-- 3、事务配置 -->
 	<!-- 3.1 配置数据源 -->
@@ -34,12 +34,12 @@
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 	<!-- 4、配置整合的ORM框架（这里是MyBatis） -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource" p:configLocation="classpath:mybatisConfig.xml" p:mapperLocations=""></bean>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource" p:configLocation="classpath:mybatisConfig.xml" p:mapperLocations="classpath:/mapper/*.xml"></bean>
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory">
 			<ref bean="sqlSessionFactory"/>
 		</constructor-arg>
 	</bean>
 	<!-- 将Mybatis的DAO接口转换为Spring的bean -->
-	<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:sqlSessionFactoryBeanName="sqlSessionFactory" p:basePackage="com.asiainfo.dao"></bean>
+	<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:sqlSessionFactoryBeanName="sqlSessionFactory" p:basePackage="com.asiainfo.mapper"></bean>
 </beans>

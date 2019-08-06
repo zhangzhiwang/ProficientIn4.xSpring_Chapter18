@@ -7,6 +7,10 @@
 	</settings>
 	
 	<typeAliases>
+		<typeAlias type="com.asiainfo.entity.Board" alias="Board"/>
+		<typeAlias type="com.asiainfo.entity.LoginLog" alias="LoginLog"/>
+		<typeAlias type="com.asiainfo.entity.Post" alias="Post"/>
+		<typeAlias type="com.asiainfo.entity.Topic" alias="Topic"/>
 		<typeAlias type="com.asiainfo.entity.User" alias="User"/>
 	</typeAliases>
 </configuration>

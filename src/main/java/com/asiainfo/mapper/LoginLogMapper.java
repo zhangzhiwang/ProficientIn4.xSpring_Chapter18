@@ -1,20 +1,21 @@
 package com.asiainfo.mapper;
 
 import com.asiainfo.entity.Board;
+import com.asiainfo.entity.LoginLog;
 
 /**
- * 板块Mapper
+ * 登录日志Mapper
  *
  * @author zhangzhiwang
  * @Aug 6, 2019 7:30:53 PM
  */
-public interface BoardMapper {
+public interface LoginLogMapper {
 	/**
-	 * 保存论坛版块
+	 * 保存登录日志
 	 * 
 	 * @author zhangzhiwang
-	 * @param board
+	 * @param loginLog
 	 * @Aug 6, 2019 7:47:36 PM
 	 */
-	void save(Board board);
+	void save(LoginLog loginLog);
 }
