@@ -32,7 +32,19 @@ public class TopicService {
 	 * @param topic
 	 * @Aug 6, 2019 8:06:15 PM
 	 */
-	void save(Topic topic) {
+	public void save(Topic topic) {
 		topicMapper.save(topic);
+	}
+	
+	/**
+	 * 按条件查询总数量
+	 * 
+	 * @param topic
+	 * @return
+	 * @author zhangzhiwang
+	 * @date 2019年8月11日 上午8:34:27
+	 */
+	public int queryTotalCount(Topic topic) {
+		return topicMapper.queryTotalCount(topic);
 	}
 }

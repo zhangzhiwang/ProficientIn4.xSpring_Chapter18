@@ -5,4 +5,11 @@
 	<insert id="save" parameterType="Topic">
 		insert into t_topic (board_id, topic_title, user_id, create_time, last_post, topic_views, topic_replies, digest) values (#{boardId},#{topicTitle},#{userId},#{createTime},#{lastPost},#{topicViews},#{topicReplies},#{digest})
 	</insert>
+	
+	<select id="queryTotalCount" parameterType="Topic" resultType="int">
+		select ccount(*) from t_topic where 1=1
+		<if test="topic_title != null and topic_title != ''">
+			and topic_title like concat('%',#{topicTitle},'%')
+		</if>
+	</select>
 </mapper>
