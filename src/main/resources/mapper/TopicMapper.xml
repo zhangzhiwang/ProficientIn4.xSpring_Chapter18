@@ -7,9 +7,20 @@
 	</insert>
 	
 	<select id="queryTotalCount" parameterType="Topic" resultType="int">
-		select ccount(*) from t_topic where 1=1
-		<if test="topic_title != null and topic_title != ''">
+		select count(*) from t_topic where 1=1
+		<if test="topicTitle != null and topicTitle != ''">
 			and topic_title like concat('%',#{topicTitle},'%')
 		</if>
 	</select>
+	
+	<select id="queryByTitleWithPage" parameterType="Topic" resultType="Topic">
+		select topic_id as topicId from t_topic where 1=1
+		<if test="topicTitle != null and topicTitle != ''">
+			and topic_title like concat('%',#{topicTitle},'%')
+		</if>
+		<if test="pageNum != 0">
+			limit (${pageNum} - 1) * ${pageSize},#{pageSize}
+		</if>
+	</select>
+	
 </mapper>

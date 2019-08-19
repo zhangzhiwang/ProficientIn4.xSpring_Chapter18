@@ -1,5 +1,7 @@
 package com.asiainfo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,5 +48,17 @@ public class TopicService {
 	 */
 	public int queryTotalCount(Topic topic) {
 		return topicMapper.queryTotalCount(topic);
+	}
+	
+	/**
+	 * 根据title查询——分页
+	 * 
+	 * @param topic
+	 * @return
+	 * @author zhangzhiwang
+	 * @date Aug 19, 2019 7:53:54 AM
+	 */
+	List<Topic> queryByTitleWithPage(Topic topic) {
+		return topicMapper.queryByTitleWithPage(topic);
 	}
 }
