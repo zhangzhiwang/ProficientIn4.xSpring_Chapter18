@@ -18,8 +18,8 @@
 		<if test="topicTitle != null and topicTitle != ''">
 			and topic_title like concat('%',#{topicTitle},'%')
 		</if>
-		<if test="pageNum != 0">
-			limit (${pageNum} - 1) * ${pageSize},#{pageSize}
+		<if test="page.pageNum != 0">
+			limit #{page.pageNum},#{page.pageSize}
 		</if>
 	</select>
 	

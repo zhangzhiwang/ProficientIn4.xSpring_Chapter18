@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.asiainfo.entity.Page;
 import com.asiainfo.entity.Topic;
 
 /**
@@ -54,8 +55,8 @@ public class TopicServiceTest extends BaseTest {
 		Topic topic = new Topic();
 //		topic.setTopicTitle("test");
 		
-		topic.setPageNum(1);
-		topic.setPageSize(2);
+		Page page = new Page(2, 3);
+		topic.setPage(page);
 		List<Topic> queryByTitleWithPage = topicService.queryByTitleWithPage(topic);
 		System.out.println(queryByTitleWithPage);
 	}

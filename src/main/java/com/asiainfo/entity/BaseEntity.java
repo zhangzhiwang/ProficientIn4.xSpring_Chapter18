@@ -11,23 +11,14 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @Aug 6, 2019 5:14:44 PM
  */
 public class BaseEntity implements Serializable {
-	private int pageNum;
-	private int pageSize;
+	private Page page;
 
-	public int getPageNum() {
-		return pageNum;
+	public Page getPage() {
+		return page;
 	}
 
-	public void setPageNum(int pageNum) {
-		this.pageNum = pageNum;
-	}
-
-	public int getPageSize() {
-		return pageSize;
-	}
-
-	public void setPageSize(int pageSize) {
-		this.pageSize = pageSize;
+	public void setPage(Page page) {
+		this.page = page;
 	}
 
 	@Override
