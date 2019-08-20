@@ -5,3 +5,6 @@
   window.location.href=" <c:url value="/index.html"/>";
 </script>
 
+<body>
+	Welcome!
+</body>
